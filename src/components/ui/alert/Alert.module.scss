@@ -1,0 +1,26 @@
+@import 'src/assets/styles/animations';
+@import 'src/assets/styles/variables';
+
+.alert {
+	width: auto;
+	background-color: rgba(255, 255, 255, 0.2);
+	color: #ffffff;
+	margin-bottom: 1rem;
+	animation: opacity 0.4s;
+	padding: 10px;
+	border-radius: 10px;
+
+	&.error {
+		background-color: #ff2e63;
+		color: $white;
+	}
+
+	&.info {
+		background-color: #ffffff;
+	}
+
+	&.warning {
+		background-color: #ff2e63;
+		color: $white;
+	}
+}

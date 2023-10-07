@@ -1,0 +1,15 @@
+@import 'src/assets/styles/variables.scss';
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	> button {
+		background: transparent;
+		border: none;
+		outline: none;
+		cursor: pointer;
+	}
+
+}

@@ -1,0 +1,38 @@
+@import 'src/assets/styles/variables';
+
+$primary-09: rgba($primary, 0.9);
+$primary-07: rgba($primary, 0.7);
+
+
+.button {
+	border: none;
+	outline: none;
+	font-size: 20px;
+	border-radius: 10px;
+	padding: 13px 48px;
+	transition: background-color 0.15s ease;
+	background-color: rgba(255, 255, 255, 0.2);
+	cursor: pointer;
+	color: $white;
+
+	@media (max-width: $mobile) {
+		font-size: 16px;
+		padding: 12px 38px;
+	}
+
+	&:hover {
+		background-color: $pink;
+	}
+
+	&.main {
+		background-color: rgba(255, 255, 255, 0.25);
+
+		&:hover {
+			background-color: $primary-07;
+		}
+	}
+}
+
+.wrapper {
+	text-align: center;
+}
