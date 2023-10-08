@@ -25,7 +25,7 @@ const Auth = () => {
 							required: 'Email is required'
 						}}
 						type='text'
-						placeholder='Enter email'
+						placeholder='Enter emailzzz'
 					/>
 
 					<Field
