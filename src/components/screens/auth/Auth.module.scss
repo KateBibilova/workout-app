@@ -11,13 +11,15 @@
 			width: 100%;
 		}
 		&:last-child > button {
-			background-color: #ff2e63;
-			opacity: 0.8;
+			// background-color: $pink;
+			// opacity: 0.9;
 			transition: opacity 0.15s ease;
 			&:hover {
-				background-color: #ff2e63;
+				background-color: $pink;
 				opacity: 1;
 			}
 		}
 	}
 }
+
+

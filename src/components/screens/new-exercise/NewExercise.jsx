@@ -70,10 +70,10 @@ const NewExercise = () => {
 						register={register}
 						options={{
 							valueAsNumber: true,
-							validate: value => value > 0 || 'Repetitions must be number',
-							required: 'Repetitions is required'
+							validate: value => value > 0 || 'Value must be a number',
+							required: 'Value is required'
 						}}
-						placeholder='Enter repetitions'
+						placeholder='Enter the number of approaches'
 					/>
 
 					<Controller

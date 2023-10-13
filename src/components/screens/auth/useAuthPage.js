@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../hooks/useAuth'
 
 import AuthService from '../../../services/auth.service'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export const useAuthPage = () => {
 	const [type, setType] = useState('login')
@@ -43,6 +45,21 @@ export const useAuthPage = () => {
 		mutate(data)
 	}
 
+	const handleSignIn = () => {
+
+		if (!isAuth) {
+			toast.error('Please sign up first', {
+				autoClose: 1500,
+				closeOnClick: true,
+				hideProgressBar: false,
+				draggable: false,
+				position: 'bottom-center'
+			})
+		} else {
+			setType('login')
+		}
+	}
+
 	return useMemo(
 		() => ({
 			setType,
@@ -50,7 +67,8 @@ export const useAuthPage = () => {
 			handleSubmit,
 			errors,
 			isLoading,
-			onSubmit
+			onSubmit,
+			handleSignIn
 		}),
 		[errors, isLoading]
 	)
