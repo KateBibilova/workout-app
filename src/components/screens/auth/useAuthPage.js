@@ -7,6 +7,7 @@ import { useAuth } from '../../../hooks/useAuth'
 
 import AuthService from '../../../services/auth.service'
 import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export const useAuthPage = () => {
 	const [type, setType] = useState('login')
