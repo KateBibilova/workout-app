@@ -6,8 +6,7 @@ import Layout from '../../layout/Layout'
 
 import styles from './Auth.module.scss'
 import { useAuthPage } from './useAuthPage'
-import { ToastContainer } from 'react-toastify';
-
+import { useAuth } from '../../../hooks/useAuth'
 
 const Auth = () => {
 	const {
@@ -20,12 +19,14 @@ const Auth = () => {
 		handleSignIn
 	} = useAuthPage()
 
+	const { isAuth } = useAuth()
+
 	return (
 		<>
 			<Layout heading='Sign in' bgImage='/images/login.png' />
 			<div className='wrapper-inner-page'>
 				{isLoading && <Loader />}
-				<ToastContainer />
+
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<Field
 						error={errors?.email?.message}
@@ -50,7 +51,7 @@ const Auth = () => {
 					/>
 
 					<div className={styles.buttonWrapper}>
-						<Button clickHandler={handleSignIn}>Sign in</Button>
+						{!isAuth && <Button clickHandler={handleSignIn}>Sign in</Button>}
 						<Button clickHandler={() => setType('register')}>Sign up</Button>
 					</div>
 				</form>

@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../hooks/useAuth'
 
 import AuthService from '../../../services/auth.service'
-import { toast } from 'react-toastify'
 
 export const useAuthPage = () => {
 	const [type, setType] = useState('login')
@@ -45,15 +44,8 @@ export const useAuthPage = () => {
 	}
 
 	const handleSignIn = () => {
-
 		if (!isAuth) {
-			toast.error('Please sign up first', {
-				autoClose: 1500,
-				closeOnClick: true,
-				hideProgressBar: false,
-				draggable: false,
-				position: 'bottom-center'
-			})
+			alert('Please sign up first')
 		} else {
 			setType('login')
 		}
