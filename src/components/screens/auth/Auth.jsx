@@ -1,4 +1,4 @@
-import Loader from '../../ui/Loader'
+import Loader from '../../ui/Loader.jsx'
 import Button from '../../ui/button/Button'
 import Field from '../../ui/field/Field'
 
@@ -6,7 +6,7 @@ import Layout from '../../layout/Layout'
 
 import styles from './Auth.module.scss'
 import { useAuthPage } from './useAuthPage'
-import { useAuth } from '../../../hooks/useAuth'
+
 
 const Auth = () => {
 	const {
@@ -16,10 +16,10 @@ const Auth = () => {
 		onSubmit,
 		register,
 		setType,
-		handleSignIn
+		isAuth
 	} = useAuthPage()
 
-	const { isAuth } = useAuth()
+	// const { isAuth } = useAuth()
 
 	return (
 		<>
@@ -51,7 +51,8 @@ const Auth = () => {
 					/>
 
 					<div className={styles.buttonWrapper}>
-						{!isAuth && <Button clickHandler={handleSignIn}>Sign in</Button>}
+						<Button clickHandler={!isAuth ? () =>
+							alert("Please sign up first") : () => setType('login')}>Sign in</Button>
 						<Button clickHandler={() => setType('register')}>Sign up</Button>
 					</div>
 				</form>
@@ -61,3 +62,4 @@ const Auth = () => {
 }
 
 export default Auth
+

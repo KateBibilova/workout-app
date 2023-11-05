@@ -43,14 +43,6 @@ export const useAuthPage = () => {
 		mutate(data)
 	}
 
-	const handleSignIn = () => {
-		if (!isAuth) {
-			alert('Please sign up first')
-		} else {
-			setType('login')
-		}
-	}
-
 	return useMemo(
 		() => ({
 			setType,
@@ -59,7 +51,7 @@ export const useAuthPage = () => {
 			errors,
 			isLoading,
 			onSubmit,
-			handleSignIn
+			isAuth
 		}),
 		[errors, isLoading]
 	)
